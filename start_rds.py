@@ -7,9 +7,9 @@ AWS_service= input("Enter the service name\n")
 
 database_name=input("Enter the database name\n")
 
-client = boto3.client(AWS_service)
+client_for_RDS = boto3.client(AWS_service)
 
-start_rds = client.start_db_instance(
+start_rds = client_for_RDS.start_db_instance(
      DBInstanceIdentifier= database_name
 )
 print(start_rds)

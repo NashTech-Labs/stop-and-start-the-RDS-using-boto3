@@ -10,9 +10,9 @@ database_name=input("Enter the database name\n")
 # you need to enter the snapshot name for your RDS instance
 snapshot_name=input("Enter the snapshot name\n")
 
-client = boto3.client(AWS_service)
+client_for_RDS = boto3.client(AWS_service)
 
-stop_rds = client.stop_db_instance (
+stop_rds = client_for_RDS.stop_db_instance (
     DBInstanceIdentifier= database_name,
     DBSnapshotIdentifier=snapshot_name
 )
